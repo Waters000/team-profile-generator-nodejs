@@ -58,7 +58,7 @@ module.exports = templateData => {
  
 // destructure projects and about data from templateData based on their property key name
 console.log(templateData)
-const {projects, nameInput, ...header} = templateData;
+const {projects, about, ...header} = templateData;
 
   return `
   <!DOCTYPE html>
