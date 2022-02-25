@@ -2,7 +2,7 @@ const fs = require('fs');
 const { writeFile, copyFile } = require('./utils/generate-site.js');
 const inquirer = require('inquirer');
 const generateHtml = require('./src/page-template');
-//const generateSite = require('./utils/generate-site.js');
+const generateSite = require('./utils/generate-site.js');
 
 
 
@@ -163,7 +163,7 @@ function moreUsers() {
     basicInfo(employeeMembers);
     } else {
       let layout = generateHtml(employeeMembers)
-      generatehtmlPage(layout)
+      generateSite(layout)
       console.log(employeeMembers)
      
       
