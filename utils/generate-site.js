@@ -1,9 +1,9 @@
 const fs= require('fs');
 
 
-const writeFile = fileContent => {
+const writeFile = (managerMembers, engineerMembers, internMembers) => {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./index.html', fileContent, err => {
+        fs.writeFile('./index.html', generateHtml(managerMembers, engineerMembers, internMembers), err => {
             // if theres an error, reject the promise and send the error to the Promise's catch() method
             if (err) {
                 reject(err);
@@ -35,6 +35,37 @@ const copyFile = () => {
     });
   };
   
+
+
+
+function generateHtml(managerMembers, engineerMembers, internMembers) {
+ var output = "";
+
+output += generateCard(managerMembers)
+output += generateCard(engineerMembers)
+output += generateCard(internMembers)
+return output;
+
+
+  
+}
+
+
+function generateCard (employee) {
+var card = "";
+
+  for (var i = 0; i < employee.length; i++) {
+console.log(employee[i].name, employee[i].employeeid, employee[i].email, employee[i].position)
+   card += `<h1>${employee[i].name}</h1>
+   
+   <h2>${employee[i].employeeid}</h2>`
+
+}
+return card;
+
+}
+
+
 
 
 module.exports = { writeFile, copyFile };

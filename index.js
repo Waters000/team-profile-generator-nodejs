@@ -1,8 +1,8 @@
 const fs = require('fs');
 const { writeFile, copyFile } = require('./utils/generate-site.js');
 const inquirer = require('inquirer');
-const generateHtml = require('./src/page-template');
-const generateSite = require('./utils/generate-site.js');
+const generatePage = require('./src/page-template');
+const generateHtml= require('./utils/generate-site.js');
 
 
 
@@ -11,7 +11,10 @@ const Employee = require("./lib/Employee")
 const Intern = require("./lib/Intern")
 const Engineer = require("./lib/Engineer")
 
-const employeeMembers = [];
+const managerMembers = [];
+const internMembers = [];
+const engineerMembers = [];
+
 
 
 function basicInfo() {
@@ -93,7 +96,7 @@ function basicInfo() {
             // console.log(responses)
             //  console.log(response.officeNumber);
             const managerMember = new Manager(responses.name, responses.employeeid, responses.emailAddress, responses.position, response.officeNumber)
-            employeeMembers.push(managerMember);
+            managerMembers.push(managerMember);
             console.log(managerMember)
             moreUsers()
           })
@@ -115,7 +118,7 @@ function basicInfo() {
         ])
           .then(response => {
             const engineerMember = new Engineer(responses.name, responses.employeeid, responses.emailAddress, responses.position, response.github)
-            employeeMembers.push(engineerMember)
+            engineerMembers.push(engineerMember)
             console.log(engineerMember)
             moreUsers()
           }) // end of enginner member inquirier
@@ -137,7 +140,7 @@ function basicInfo() {
         ])
           .then(response => {
             const internMember = new Intern(responses.name, responses.employeeid, responses.emailAddress, responses.position, response.school)
-            employeeMembers.push(internMember)
+            internMembers.push(internMember)
             console.log(internMember)
             moreUsers()
           })
@@ -160,17 +163,15 @@ function moreUsers() {
 ])
   .then(moreResponse => {
     if (moreResponse.moreEmployees === true){
-    basicInfo(employeeMembers);
+    basicInfo();
     } else {
-      let layout = generateHtml(employeeMembers)
-      generateSite(layout)
-      console.log(employeeMembers)
-     
-      
-     // generateSite(postEmployee)
+           writeFile(managerMembers, engineerMembers, internMembers)
     }
   })
 }
+
+
+
 
 basicInfo()
 
