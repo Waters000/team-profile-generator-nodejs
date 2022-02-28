@@ -24,12 +24,12 @@ function basicInfo() {
     {
       type: 'input',
       name: 'name',
-      message: 'What is your name?',
+      message: 'What is employee name?',
       validate: nameInput => {
         if (nameInput) {
           return true;
         } else {
-          console.log("Please enter your name!");
+          console.log("Please enter the employee name!");
           return false;
         }
       }
@@ -37,12 +37,12 @@ function basicInfo() {
     {
       type: 'input',
       name: 'employeeid',
-      message: 'What is your Employee ID?',
+      message: 'What is the Employee ID?',
       validate: employeeidInput => {
         if (employeeidInput) {
           return true;
         } else {
-          console.log('Please enter your employee ID!');
+          console.log('Please enter the employee ID!');
           return false;
         }
       }
@@ -50,12 +50,12 @@ function basicInfo() {
     {
       type: 'input',
       name: 'emailAddress',
-      message: 'What is your manager email address?',
+      message: 'What is employee email address?',
       validate: emailAddressInput => {
         if (emailAddressInput) {
           return true;
         } else {
-          console.log('Please enter your email address!');
+          console.log('Please enter the email address!');
           return false;
         }
       }
@@ -82,7 +82,7 @@ function basicInfo() {
           {
             type: 'input',
             name: 'officeNumber',
-            message: 'What is your office number?',
+            message: 'What is the Manager office number?',
             validate: officeNumberInput => {
               if (officeNumberInput) {
                 return true;
@@ -107,12 +107,12 @@ function basicInfo() {
           {
             type: 'input',
             name: 'github',
-            message: 'What is your Github username?',
+            message: "What is Engineer's Github username?",
             validate: githubInput => {
               if (githubInput) {
                 return true;
               } else {
-                console.log('Please enter your Github username!');
+                console.log('Please enter the Github username!');
                 return false;
               }
             }
@@ -129,12 +129,12 @@ function basicInfo() {
           {
             type: 'input',
             name: 'school',
-            message: "What school do you attend?",
+            message: "What school does the intern attend?",
             validate: schoolInput => {
               if (schoolInput) {
                 return true;
               } else {
-                console.log("Please enter your School Name")
+                console.log("Please enter the School Name")
                 return false;
               }
             }
