@@ -14,6 +14,8 @@ const Engineer = require("./lib/Engineer")
 const managerMembers = [];
 const internMembers = [];
 const engineerMembers = [];
+const employeeMembers = [];
+
 
 
 
