@@ -42,7 +42,8 @@ JavaScript, HTML, CSS, Node
   Visit github profile:
   https://github.com/Waters000
 
-  ![alt text](assets/images/screenshot.png)
+  ![screenshot](https://user-images.githubusercontent.com/94644749/156073262-49730412-ef32-452d-a4fd-128ce71e6dd0.png)
+
  
 
 ### Year Built
