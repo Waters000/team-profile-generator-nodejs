@@ -45,7 +45,7 @@ function generateHtml(managerMembers, engineerMembers, internMembers) {
          <meta charset="UTF-8">
          <meta http-equiv="X-UA-Compatible" content="IE=edge">
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>Workday Scheduler</title>
+         <title>Team Profile</title>
          <link rel="stylesheet"
              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
              <link rel="stylesheet"
@@ -65,14 +65,14 @@ function generateHtml(managerMembers, engineerMembers, internMembers) {
 </div>
 </header>
      
-<div class="m-0 bg-warning container-fluid"><div class="row">
+<div class="m-0 bg-warning container-fluid"><div class="justify-content-center row">
    
   ${generateManager(managerMembers)} </div></div>
   
-  <div class="bg-success container-fluid"><div class="row"> 
+  <div class="bg-success container-fluid"><div class="justify-content-center row"> 
   ${generateEngineer(engineerMembers)} </div></div>
 
-  <div class="bg-primary container-fluid"><div class="row">
+  <div class="bg-primary container-fluid"><div class="justify-content-center row">
   ${generateIntern(internMembers)} </div></div>
    
 

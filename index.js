@@ -130,14 +130,16 @@ function basicInfo() {
             type: 'input',
             name: 'school',
             message: "What school does the intern attend?",
-            validate: schoolInput => {
-              if (schoolInput) {
-                return true;
-              } else {
-                console.log("Please enter the School Name")
-                return false;
-              }
-            }
+            validate: schoolName(school),
+            
+            // schoolInput => {
+            //   if (schoolInput) {
+            //     return true;
+            //   } else {
+            //     console.log("Please enter the School Name")
+            //     return false;
+            //   }
+            // }
           }
         ])
           .then(response => {
